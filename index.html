@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bunny Yes or No 💕</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(#ffd6e8, #fff);
+    text-align: center;
+  }
+
+  .slide {
+    display: none;
+    padding: 30px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  img {
+    width: 220px;
+    margin: 20px 0;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .yes {
+    background: #ff69b4;
+    color: white;
+  }
+
+  .no {
+    background: #aaa;
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active">
+  <h2>Heyyy babbbyyyy  
+ 😋🎀</h2>
+  <img src="bunny1.png">
+  <p> am i the reason, for making u smile everyday 😁</p>
+  <button class="yes" onclick="nextSlide()">YES</button>
+  <button class="no" onclick="funnyNo(this)">NO</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+  <h2>One more question 😋</h2>
+  <img src="bunny2.png">
+  <p>Will you be my favourite and cookie pookie person for this year? 💖</p>
+  <button class="yes" onclick="nextSlide()">YES</button>
+  <button class="no" onclick="funnyNo(this)">NO</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+  <h2>Be honest 😌</h2>
+  <img src="bunny3.png">
+  <p> and yaa 3 month se kuch nhi hotaaa okieee 😤, smjh gye na chutkii 👶🏻🎀</p>
+  <button class="" onclick="nextSlide()">YES</button>
+  <button class="no" onclick="funnyNo(this)">NO</button> 
+ </div>
+ 
+ <!-- Slide 4-->
+<div class="slide">
+  <h2>Be honest 😌</h2>
+  <img src="bunny4.png">
+  <p> aap ko lgta hai na ki mai jayda pyar krta hu??😋</p>
+  <button class="" onclick="nextSlide()">YES</button>
+  <button class="no" onclick="funnyNo(this)">NO</button>
+ </div>
+  
+<!-- Final Slide -->
+<div class="slide">
+  <h1 Happy new year jannuu 🫂💖</h1>
+  <img src="bunny_final.png">
+  <p>
+    May this year bring us more smiles a lots of laughs and small fights 👁️👁️,  
+    looking you happy... makes my day , even tho the mood is thoda not achha 🥰  
+    <br><br>
+    Stay cute💋 Stay happy. Stay with me , and keep holding my hand 🎀,I love youhh bachha 😭💗
+  </p>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+function nextSlide() {
+  slides[current].classList.remove('active');
+  current++;
+  if(current < slides.length){
+    slides[current].classList.add('active');
+  }
+}
+
+// Funny NO button
+function funnyNo(button) {
+  const messages = [
+    "Oops! something went wrong, no is not allowed 😜",
+    "khikikhikhikhi try YES instead babe 😋",
+    "chall chall says YES! 👶🏻",
+    "NO? I don't think so 😂",
+    "Press YES or should I 😤 🔪"
+  ];
+  const randomMessage = messages[Math.floor(Math.random()*messages.length)];
+  button.innerText = randomMessage;
+
+  // Make the button "jump" to random spot
+  button.style.position = "absolute";
+  button.style.top = Math.floor(Math.random()*80+10) + "%";
+  button.style.left = Math.floor(Math.random()*70+10) + "%";
+}
+</script>
+
+</body>
+</html>
